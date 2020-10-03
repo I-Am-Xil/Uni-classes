@@ -18,11 +18,13 @@ program veintiuno
     read(*,*) m
 
     allocate(m1(n,m), m2(m,n), m3(n,n))
+    
+    m3 = 0
 
     if (n <= m) then
         do i = 1, m
             do j = 1, n
-                write(*,*) "Ingrese el valor de la fila", i, "columna", j, "de la matriz A"
+                write(*,*) "Ingrese el valor de la columna", i, "fila", j, "de la matriz A"
                 read(*,*) m1(i,j)
                 write(*,*) "Ingrese los valores de la fila", i,  "columna", j, "de la matriz B"
                 read(*,*) m2(i,j)
@@ -31,8 +33,6 @@ program veintiuno
     else
         write(*,*) "Valor no definido por el programador aun ptm"
     end if
-
-    m3 = 0
 
     do i = 1, n
         write(*,*) m1(i,:)
