@@ -21,18 +21,16 @@ program veintiuno
     
     m3 = 0
 
-    if (n <= m) then
-        do i = 1, m
-            do j = 1, n
-                write(*,*) "Ingrese el valor de la columna", i, "fila", j, "de la matriz A"
-                read(*,*) m1(i,j)
-                write(*,*) "Ingrese los valores de la fila", i,  "columna", j, "de la matriz B"
-                read(*,*) m2(i,j)
-            end do
+
+    do i = 1, m
+        do j = 1, n
+            write(*,*) "Ingrese el valor de la columna", i, "fila", j, "de la matriz A"
+            read(*,*) m1(j,i)
+            write(*,*) "Ingrese los valores de la fila", i,  "columna", j, "de la matriz B"
+            read(*,*) m2(i,j)
         end do
-    else
-        write(*,*) "Valor no definido por el programador aun ptm"
-    end if
+    end do
+
 
     do i = 1, n
         write(*,*) m1(i,:)
@@ -49,6 +47,7 @@ program veintiuno
     do k = 1, n
         do j = 1, n
             do i = 1, m
+                write(*,*) "k,j,i", k, j, i, "=>", m3(k,j), " + ", m1(k,i), " * ", m2(i,j), " = ", m3(k,j) + m1(k,i)*m2(i,j)
                 m3(k,j) = m3(k,j) + m1(k,i)*m2(i,j)
             end do
         end do
