@@ -20,7 +20,7 @@ program veintisiete
 
     do i = 1, n
         do j = 1, n
-            write(*,*) "Ingrese el valorde la fila ", i, "columna", j
+            write(*,*) "Ingrese el valor de la fila ", i, "columna", j
             read(*,*) m1(i,j)   
         end do
     end do
